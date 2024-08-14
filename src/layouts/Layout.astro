@@ -1,0 +1,36 @@
+---
+import Navigation from '../components/vue/navigation.vue'
+
+interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+let activePage = `${Astro.url.pathname}`
+console.log(activePage)
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style>
+			/* Add your CSS styles here */
+			@media screen and (max-width: 768px) {
+				/* Styles for screens smaller than 768px */
+			}
+		</style>
+	</head>
+	<body>
+		<Navigation activePage={activePage} />
+		<slot />
+		<footer>
+			<!-- Add your footer content here -->
+		</footer>
+	</body>
+</html>
