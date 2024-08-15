@@ -27,7 +27,7 @@ async function load() {
 			description: repo.description,
 			language: repo.language,
 			stars: repo.stargazers_count,
-			lastUpdated: repo.updated_at,
+			lastUpdated: new Date(repo.updated_at).toLocaleString(),
 			url: repo.html_url
 		})
 	})
