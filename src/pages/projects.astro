@@ -4,55 +4,59 @@ import Layout from '../layouts/Layout.astro'
 import { Octokit } from '@octokit/core'
 
 interface Project {
-    title: string
-    description: string
-    language: string
-    stars: number
-    lastUpdated: string
-    url: string
+	title: string
+	description: string
+	language: string
+	stars: number
+	lastUpdated: string
+	url: string
 }
 
 const octokit = new Octokit({ auth: import.meta.env.GITHUB_TOKEN })
 const projects: Project[] = []
 
 async function load() {
-    const { data } = await octokit.request('GET /users/{username}/repos', {
-        username: 'arenmarsden',
-    })
+	const { data } = await octokit.request('GET /users/{username}/repos', {
+		username: 'arenmarsden'
+	})
 
-    data.forEach((repo: any) => {
-        if (repo.fork) return
-        projects.push({
-            title: repo.name,
-            description: repo.description,
-            language: repo.language,
-            stars: repo.stargazers_count,
-            lastUpdated: repo.updated_at,
-            url: repo.html_url
-        })
-    })
+	data.forEach((repo: any) => {
+		if (repo.fork) return
+		projects.push({
+			title: repo.name,
+			description: repo.description,
+			language: repo.language,
+			stars: repo.stargazers_count,
+			lastUpdated: repo.updated_at,
+			url: repo.html_url
+		})
+	})
 
-    projects.sort((a, b) => b.stars - a.stars)
+	projects.sort((a, b) => b.stars - a.stars)
 
-    return { projects }
+	return { projects }
 }
 
 await load()
 ---
 
 <Layout title="Projects">
-    <main class="justify-center grid grid-cols-1 gap-4 bg-gray-800 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%">
-        {
-            projects.map((project: Project) => (
-                <ProjectCard project={project} />
-            ))
-        }
-    </main>
+	<main
+		class="grid grid-cols-1 justify-center gap-4 bg-gray-800 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+		style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%"
+	>
+		{
+			projects.map((project: Project) => (
+				<div class="grid-item">
+					<ProjectCard project={project} />
+				</div>
+			))
+		}
+	</main>
 </Layout>
 
 <style>
-    .grid-item {
-        display: contents;
-    }
+	.grid-item {
+		display: contents;
+	}
 </style>
-</Layout>
