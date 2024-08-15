@@ -26,10 +26,12 @@ let activePage = `${Astro.url.pathname}`
 		</style>
 	</head>
 	<body>
-		<Navigation activePage={activePage} />
-		<slot />
-		<footer>
-			<!-- Add your footer content here -->
-		</footer>
+		<div class="animate-fade">
+			<Navigation activePage={activePage} />
+			<slot />
+			<footer>
+				<!-- Add your footer content here -->
+			</footer>
+		</div>
 	</body>
 </html>
