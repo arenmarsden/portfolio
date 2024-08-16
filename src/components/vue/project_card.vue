@@ -8,16 +8,16 @@
 			<h3 class="text-xl font-semibold text-white">{{ project.title }}</h3>
 			<p class="text-white">{{ project.description }}</p>
 			<div class="mt-4 flex items-center">
-				<span class="mr-2 font-semibold text-gray-700 text-white">Language:</span>
-				<span class="text-gray-600 text-white">{{ project.language }}</span>
+				<span class="mr-2 font-semibold text-white">Language:</span>
+				<span class="text-white">{{ project.language }}</span>
 			</div>
 			<div class="mt-2 flex items-center">
-				<span class="mr-2 font-semibold text-gray-700 text-white">Stars:</span>
-				<span class="text-gray-600 text-white">{{ project.stars }}</span>
+				<span class="mr-2 font-semibold text-white">Stars:</span>
+				<span class="text-white">{{ project.stars }}</span>
 			</div>
 			<div class="mt-2 flex items-center">
-				<span class="mr-2 font-semibold text-gray-700 text-white">Last Updated:</span>
-				<span class="text-gray-600 text-white">{{ project.lastUpdated }}</span>
+				<span class="mr-2 font-semibold text-white">Last Updated:</span>
+				<span class="text-white">{{ project.lastUpdated }}</span>
 			</div>
 		</div>
 	</a>
