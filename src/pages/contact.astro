@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import ContactForm from '../components/vue/contact_form.vue'
-import SocialMedia from '../components/vue/social_media.vue'
 
 // This is the contact page
 
@@ -39,9 +38,10 @@ if (Astro.request.method === 'POST') {
 ---
 
 <Layout title="Contact">
-    <div class="h-screen flex items-center justify-center bg-gray-800">
-        <div class="w-full md:w-1/2">
-            <ContactForm/>
-        </div>
-    </div>
+	<div class="flex h-screen items-center justify-center bg-gray-800">
+		<div class="w-full md:w-1/2">
+			<h1 class="text-white font-semibold text-center">Contact Me</h1>
+			<ContactForm />
+		</div>
+	</div>
 </Layout>
