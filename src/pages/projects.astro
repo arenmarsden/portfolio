@@ -15,29 +15,23 @@ interface Project {
 const octokit = new Octokit({ auth: import.meta.env.GITHUB_TOKEN })
 const projects: Project[] = []
 
-async function load() {
-	const { data } = await octokit.request('GET /users/{username}/repos', {
-		username: 'arenmarsden'
+const { data } = await octokit.request('GET /users/{username}/repos', {
+	username: 'arenmarsden'
+})
+
+data.forEach((repo: any) => {
+	if (repo.fork) return
+	projects.push({
+		title: repo.name,
+		description: repo.description,
+		language: repo.language,
+		stars: repo.stargazers_count,
+		lastUpdated: new Date(repo.updated_at).toLocaleString(),
+		url: repo.html_url
 	})
+})
 
-	data.forEach((repo: any) => {
-		if (repo.fork) return
-		projects.push({
-			title: repo.name,
-			description: repo.description,
-			language: repo.language,
-			stars: repo.stargazers_count,
-			lastUpdated: new Date(repo.updated_at).toLocaleString(),
-			url: repo.html_url
-		})
-	})
-
-	projects.sort((a, b) => b.stars - a.stars)
-
-	return { projects }
-}
-
-await load()
+projects.sort((a, b) => b.stars - a.stars)
 ---
 
 <Layout title="Projects">
