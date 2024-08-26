@@ -10,6 +10,27 @@ const errors = {
 	message: ''
 }
 
+async function sendEmail(email: string, subject: string, message: string) {
+	const response = await fetch('/api/send-email', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ 
+			email: email,
+			subject: subject,
+			message: message,
+			reply_to: 'me@arenmarsden.com'
+		 })
+	})
+
+	if (response.ok) {
+		return response.json()
+	} else {
+		throw new Error('Failed to send email')
+	}
+}
+
 if (Astro.request.method === 'POST') {
 	try {
 		const data = await Astro.request.formData()
@@ -30,7 +51,8 @@ if (Astro.request.method === 'POST') {
 		}
 
 		// If there are no errors, send the email
-		console.log({ name: name, email: email, message: message })
+		const response = await sendEmail(email as string, 'Contact Form Submission', message as string)
+		console.log(response)
 	} catch (error) {
 		console.error(error)
 	}
