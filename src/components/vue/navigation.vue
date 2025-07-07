@@ -9,9 +9,12 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden space-x-8 md:flex">
-                    <a href="/" class="text-lg font-medium text-gray-300 hover:text-white px-3 py-2 rounded-md">Home</a>
+                    <a href="/" class="text-lg font-medium text-gray-300 hover:text-white px-1 py-2 rounded-md">Home</a>
+                    <a href="/background"
+                        class="text-lg font-medium text-gray-300 hover:text-white px-1 py-2 rounded-md">Background</a>
                     <a href="/projects"
-                        class="text-lg font-medium text-gray-300 hover:text-white px-3 py-2 rounded-md">Projects</a>
+                        class="text-lg font-medium text-gray-300 hover:text-white px-1 py-2 rounded-md">Projects</a>
+
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -38,8 +41,11 @@
         <!-- Mobile Menu -->
         <div v-if="mobileMenuOpen" class="md:hidden px-2 pt-2 pb-3 space-y-1 bg-gray-700">
             <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Home</a>
+            <a href="/background"
+                class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Background</a>
             <a href="/projects"
                 class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-600">Projects</a>
+
         </div>
     </nav>
 </template>
