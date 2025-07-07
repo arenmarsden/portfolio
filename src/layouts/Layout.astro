@@ -10,7 +10,7 @@ let activePage = `${Astro.url.pathname}`
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -21,14 +21,18 @@ let activePage = `${Astro.url.pathname}`
 		<style>
 			html, body {
 				overflow-x: hidden;
+				padding: 0;
+				margin: 0;
+				height: 100%;
 			}
 			* {
- 				 outline: 1px solid red;
+				padding: 0 !important;
+				margin: 0 !important;
 			}
 			</style>
 	</head>
-	<body class="overflow-auto">
-		<Navigation activePage={activePage} />
+	<body class="overflow-x-hidden bg-gray-800 min-h-screen">
+		<Navigation client:load activePage={activePage} />
 		<slot />
 	</body>
 </html>
