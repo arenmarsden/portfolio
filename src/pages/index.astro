@@ -3,22 +3,38 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="home">
-	<main class="flex h-screen items-center justify-center bg-gray-800">
-		<div class="mx-auto w-full md:w-1/4" style="padding-top: 3%">
-			<img src="/images/aren.jpg" alt="Aren's Image" class="w-full rounded-full" />
-		</div>
-		<div class="w-full p-4 md:w-1/2">
-			<h1
-				class="text-center text-4xl font-bold text-white"
-				style="padding-top: 8%; padding-right: 25%;"
-			>
-				Hey, I'm <span class="text-blue-500">Aren</span>
-			</h1>
-			<p class="mt-4 text-center text-white" style="padding-right: 25%;">
-				I am a cloud software engineer specializing in developing robust, scalable applications on
-				the AWS platform. Proficient in strongly typed languages, I build reliable and efficient
-				systems. I am dedicated to delivering software solutions that drive business success.
-			</p>
+	<main
+		class="flex flex-col items-center justify-center overflow-y-auto bg-gray-800"
+		style="height: calc(100vh - 4rem);"
+	>
+		<div class="mx-auto flex w-full flex-col items-center justify-center py-8 md:flex-row">
+			<!-- Image Section -->
+			<div class="w-full md:w-1/3">
+				<img
+					src="/images/me.png"
+					alt="Aren's Image"
+					class="mx-auto h-auto w-72 rounded-full sm:w-80 md:w-full"
+				/>
+			</div>
+
+			<!-- Text & CTA Section -->
+			<div class="w-full p-4 text-center md:w-1/2">
+				<h1 class="text-4xl font-bold text-white">
+					Hey, I'm <span class="text-blue-400">Aren</span>
+				</h1>
+				<p class="mt-4 text-xl text-white">
+					I help startups and technical teams build production-ready backend systems and
+					infrastructure<br /> — fast, secure, and scalable from day one.
+				</p>
+				<div class="mt-6">
+					<a
+						href="https://outlook.office.com/bookwithme/user/bc967876fe81461d833a8372465e876e@arenmarsden.com/meetingtype/8CdO1oVjx0yqkdRpFPV_UQ2?anonymous&ismsaljsauthenabled&ep=mlink"
+						class="inline-block rounded-lg bg-blue-400 px-6 py-3 text-white transition hover:bg-blue-600"
+					>
+						Book a Free Consultation
+					</a>
+				</div>
+			</div>
 		</div>
 	</main>
 </Layout>

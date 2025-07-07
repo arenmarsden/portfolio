@@ -10,17 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/cloudflare": "^11.0.4",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vue": "^4.5.0",
-    "@octokit/core": "^6.1.2",
-    "astro": "^4.14.5",
-    "prettier": "^3.3.3",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^11.2.0",
+    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/vue": "^4.5.3",
+    "@octokit/core": "^6.1.5",
+    "astro": "^4.16.18",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4",
-    "vue": "^3.4.37"
+    "prettier-plugin-tailwindcss": "^0.6.13",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "vue": "^3.5.17"
   }
 }
