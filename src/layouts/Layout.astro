@@ -13,13 +13,39 @@ let activePage = `${Astro.url.pathname}`
 <html lang="en" class="overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta
+			name="description"
+			content="Expert backend engineer helping startups build scalable, secure infrastructure. Book a free consultation to boost your tech stack."
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Aren M – Backend Engineer & Infra Specialist" />
+		<meta
+			property="og:description"
+			content="Helping startups build fast, scalable, secure infrastructure."
+		/>
+		<meta property="og:image" content="/images/me.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={`${Astro.site}${Astro.url.pathname}`} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Aren M – Backend Engineer & Infra Specialist" />
+		<meta
+			name="twitter:description"
+			content="Helping startups build fast, scalable, secure infrastructure."
+		/>
+		<meta name="twitter:image" content="/images/me.png" />
 		<title>{title} &bullet; mrsn.dev</title>
 		<style>
-			html, body {
+			html,
+			body {
 				overflow-x: hidden;
 				padding: 0;
 				margin: 0;
@@ -29,9 +55,9 @@ let activePage = `${Astro.url.pathname}`
 				padding: 0 !important;
 				margin: 0 !important;
 			}
-			</style>
+		</style>
 	</head>
-	<body class="overflow-x-hidden bg-gray-800 min-h-screen">
+	<body class="min-h-screen overflow-x-hidden bg-gray-800">
 		<Navigation client:load activePage={activePage} />
 		<slot />
 	</body>
