@@ -4,13 +4,15 @@ import vue from '@astrojs/vue'
 
 import tailwind from '@astrojs/tailwind'
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [vue(), tailwind()],
-	output: 'server',
-	adapter: cloudflare({
-		platformProxy: {
-			enabled: true
-		}
-	})
+    integrations: [vue(), tailwind(), sitemap()],
+    output: 'server',
+    adapter: cloudflare({
+        platformProxy: {
+            enabled: true
+        }
+    })
 })
